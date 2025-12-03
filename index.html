@@ -723,6 +723,166 @@
             background: var(--accent-mint);
         }
 
+        /* Attention Game Styles */
+        .attention-game {
+            text-align: center;
+        }
+
+        .attention-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+            max-width: 250px;
+            margin: 0 auto 20px;
+        }
+
+        .attention-btn {
+            aspect-ratio: 1;
+            background: var(--purple-deep);
+            border: 2px solid var(--glass-border);
+            border-radius: 12px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .attention-btn.highlight {
+            background: var(--accent-teal);
+            border-color: var(--accent-teal);
+            box-shadow: 0 0 20px rgba(78, 205, 196, 0.6);
+            animation: pulse-attention 0.5s ease-in-out infinite;
+        }
+
+        @keyframes pulse-attention {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        .attention-btn.correct {
+            background: var(--accent-mint);
+            border-color: var(--accent-mint);
+        }
+
+        .attention-btn.wrong {
+            background: var(--accent-coral);
+            border-color: var(--accent-coral);
+        }
+
+        .attention-score {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--accent-teal);
+        }
+
+        /* Word Game Styles */
+        .word-game {
+            text-align: center;
+        }
+
+        .words-to-remember {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+            margin-top: 15px;
+        }
+
+        .word-chip {
+            background: linear-gradient(135deg, var(--purple-bright) 0%, var(--purple-main) 100%);
+            padding: 10px 20px;
+            border-radius: 25px;
+            font-size: 1.1rem;
+            font-weight: 500;
+            animation: fadeInWord 0.5s ease forwards;
+            opacity: 0;
+        }
+
+        @keyframes fadeInWord {
+            to { opacity: 1; }
+        }
+
+        .word-input {
+            width: 100%;
+            max-width: 280px;
+            padding: 15px 20px;
+            background: var(--purple-deep);
+            border: 2px solid var(--glass-border);
+            border-radius: 30px;
+            color: var(--text-white);
+            font-size: 1rem;
+            text-align: center;
+            outline: none;
+            transition: border-color 0.3s ease;
+        }
+
+        .word-input:focus {
+            border-color: var(--purple-bright);
+        }
+
+        .word-input::placeholder {
+            color: var(--text-muted);
+        }
+
+        .recalled-words {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            justify-content: center;
+            margin-top: 15px;
+        }
+
+        .recalled-chip {
+            background: var(--accent-mint);
+            color: var(--purple-darkest);
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        .recalled-chip.wrong {
+            background: var(--accent-coral);
+            color: white;
+        }
+
+        /* Pattern Game Styles */
+        .pattern-game {
+            text-align: center;
+        }
+
+        .pattern-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            max-width: 200px;
+            margin: 0 auto 20px;
+        }
+
+        .pattern-btn {
+            aspect-ratio: 1;
+            border: none;
+            border-radius: 15px;
+            cursor: pointer;
+            opacity: 0.5;
+            transition: all 0.2s ease;
+        }
+
+        .pattern-btn.active {
+            opacity: 1;
+            transform: scale(1.1);
+            box-shadow: 0 0 25px currentColor;
+        }
+
+        .pattern-btn:disabled {
+            cursor: not-allowed;
+        }
+
+        .pattern-status {
+            font-size: 1rem;
+            color: var(--text-muted);
+            font-weight: 500;
+        }
+
         .test-result {
             display: none;
             text-align: center;
@@ -1799,6 +1959,10 @@
             background: linear-gradient(135deg, #e62b1e 0%, #ff4136 100%);
         }
 
+        .video-badge.alz {
+            background: linear-gradient(135deg, var(--purple-bright) 0%, var(--accent-teal) 100%);
+        }
+
         .video-details {
             padding: 15px;
         }
@@ -2164,11 +2328,54 @@
                     <div class="test-timer" id="testTimer">0:30</div>
                     <h3 id="testQuestion" style="margin-bottom: 20px;">Find the matching pairs!</h3>
                     
+                    <!-- Memory Match Game -->
                     <div class="memory-grid" id="memoryGrid">
                         <!-- Cards will be inserted by JS -->
                     </div>
 
-                    <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 15px;">Tap cards to reveal and match pairs</p>
+                    <!-- Attention Focus Game -->
+                    <div class="attention-game" id="attentionGame" style="display: none;">
+                        <p style="margin-bottom: 15px; color: var(--text-muted);">Tap the highlighted button as fast as you can!</p>
+                        <div class="attention-grid">
+                            <button class="attention-btn" data-id="1"></button>
+                            <button class="attention-btn" data-id="2"></button>
+                            <button class="attention-btn" data-id="3"></button>
+                            <button class="attention-btn" data-id="4"></button>
+                            <button class="attention-btn" data-id="5"></button>
+                            <button class="attention-btn" data-id="6"></button>
+                            <button class="attention-btn" data-id="7"></button>
+                            <button class="attention-btn" data-id="8"></button>
+                            <button class="attention-btn" data-id="9"></button>
+                        </div>
+                        <div class="attention-score">Score: <span id="attentionScore">0</span></div>
+                    </div>
+
+                    <!-- Word Recall Game -->
+                    <div class="word-game" id="wordGame" style="display: none;">
+                        <div class="word-display" id="wordDisplay">
+                            <p style="color: var(--text-muted); margin-bottom: 10px;">Memorize these words:</p>
+                            <div class="words-to-remember" id="wordsToRemember"></div>
+                        </div>
+                        <div class="word-input-area" id="wordInputArea" style="display: none;">
+                            <p style="color: var(--text-muted); margin-bottom: 15px;">Type the words you remember:</p>
+                            <input type="text" id="wordInput" class="word-input" placeholder="Type a word and press Enter">
+                            <div class="recalled-words" id="recalledWords"></div>
+                        </div>
+                    </div>
+
+                    <!-- Pattern Recognition Game -->
+                    <div class="pattern-game" id="patternGame" style="display: none;">
+                        <p style="margin-bottom: 15px; color: var(--text-muted);">Watch the pattern, then repeat it!</p>
+                        <div class="pattern-grid">
+                            <button class="pattern-btn" data-id="0" style="background: #ff6b8a;"></button>
+                            <button class="pattern-btn" data-id="1" style="background: #4ecdc4;"></button>
+                            <button class="pattern-btn" data-id="2" style="background: #ffd93d;"></button>
+                            <button class="pattern-btn" data-id="3" style="background: #7b4bb8;"></button>
+                        </div>
+                        <div class="pattern-status" id="patternStatus">Watch carefully...</div>
+                    </div>
+
+                    <p id="testHint" style="font-size: 0.85rem; color: var(--text-muted); margin-top: 15px;">Tap cards to reveal and match pairs</p>
                 </div>
 
                 <button class="btn-primary" style="width: 100%; margin-top: 20px;" onclick="endTest()">End Assessment</button>
@@ -2629,15 +2836,15 @@
                 <div class="video-grid">
                     <div class="video-card-large" onclick="playYouTubeVideo('0k_f5kBgjHQ')">
                         <div class="video-thumbnail-large">
-                            <img src="https://img.youtube.com/vi/0k_f5kBgjHQ/mqdefault.jpg" alt="What is Alzheimer's Disease" onerror="this.style.display='none'">
+                            <img src="https://img.youtube.com/vi/0k_f5kBgjHQ/mqdefault.jpg" alt="Managing Sundowning Symptoms" onerror="this.style.display='none'">
                             <div class="play-overlay">
                                 <div class="play-btn-large">▶</div>
                             </div>
-                            <span class="video-badge">Educational</span>
+                            <span class="video-badge">Caregiving</span>
                         </div>
                         <div class="video-details">
-                            <h5>What is Alzheimer's Disease?</h5>
-                            <p>Understanding the basics of Alzheimer's disease, symptoms, and brain changes</p>
+                            <h5>Managing Sundowning Symptoms</h5>
+                            <p>Learn strategies to help manage increased confusion and agitation in late afternoon and evening</p>
                             <div class="video-meta-row">
                                 <span class="yt-icon">▶ YouTube</span>
                             </div>
@@ -2663,15 +2870,15 @@
 
                     <div class="video-card-large" onclick="playYouTubeVideo('jZZ274HKIiA')">
                         <div class="video-thumbnail-large">
-                            <img src="https://img.youtube.com/vi/jZZ274HKIiA/mqdefault.jpg" alt="Alzheimer's Research" onerror="this.style.display='none'">
+                            <img src="https://img.youtube.com/vi/jZZ274HKIiA/mqdefault.jpg" alt="Alzheimer's Association 24/7 Helpline" onerror="this.style.display='none'">
                             <div class="play-overlay">
                                 <div class="play-btn-large">▶</div>
                             </div>
-                            <span class="video-badge">Research</span>
+                            <span class="video-badge alz">Alz Assoc</span>
                         </div>
                         <div class="video-details">
-                            <h5>Understanding Dementia</h5>
-                            <p>Latest insights into dementia research and treatment approaches</p>
+                            <h5>Alzheimer's Association 24/7 Helpline</h5>
+                            <p>Learn about the free support available through the Alzheimer's Association helpline</p>
                             <div class="video-meta-row">
                                 <span class="yt-icon">▶ YouTube</span>
                             </div>
@@ -2795,11 +3002,45 @@
         let matchedPairs = 0;
         let timerInterval;
         let timeLeft = 30;
+        let currentTestType = 'memory';
+        let testScore = 0;
+
+        // Attention game variables
+        let attentionScore = 0;
+        let attentionInterval;
+
+        // Word game variables
+        const wordLists = [
+            ['Apple', 'House', 'River', 'Chair', 'Moon'],
+            ['Garden', 'Clock', 'Ocean', 'Bread', 'Star'],
+            ['Window', 'Forest', 'Pencil', 'Music', 'Cloud']
+        ];
+        let currentWords = [];
+        let recalledWords = [];
+
+        // Pattern game variables
+        let pattern = [];
+        let playerPattern = [];
+        let patternLevel = 1;
+        let isShowingPattern = false;
+
+        function hideAllGames() {
+            document.getElementById('memoryGrid').style.display = 'none';
+            document.getElementById('attentionGame').style.display = 'none';
+            document.getElementById('wordGame').style.display = 'none';
+            document.getElementById('patternGame').style.display = 'none';
+        }
 
         function startMemoryTest() {
+            currentTestType = 'memory';
             document.getElementById('testIntro').style.display = 'none';
             document.getElementById('testActive').classList.add('show');
             document.getElementById('testResult').classList.remove('show');
+            
+            hideAllGames();
+            document.getElementById('memoryGrid').style.display = 'grid';
+            document.getElementById('testQuestion').textContent = 'Find the matching pairs!';
+            document.getElementById('testHint').textContent = 'Tap cards to reveal and match pairs';
             
             // Reset game
             matchedPairs = 0;
@@ -2820,8 +3061,220 @@
                 grid.appendChild(card);
             });
 
-            // Start timer
+            startTimer();
+        }
+
+        function startAttentionTest() {
+            currentTestType = 'attention';
+            document.getElementById('testIntro').style.display = 'none';
+            document.getElementById('testActive').classList.add('show');
+            document.getElementById('testResult').classList.remove('show');
+            
+            hideAllGames();
+            document.getElementById('attentionGame').style.display = 'block';
+            document.getElementById('testQuestion').textContent = 'Attention Focus Test';
+            document.getElementById('testHint').textContent = 'Tap the glowing button as quickly as possible!';
+            
+            attentionScore = 0;
+            document.getElementById('attentionScore').textContent = '0';
+            timeLeft = 30;
+
+            // Add click handlers
+            document.querySelectorAll('.attention-btn').forEach(btn => {
+                btn.onclick = () => handleAttentionClick(btn);
+                btn.classList.remove('highlight', 'correct', 'wrong');
+            });
+
+            startTimer();
+            highlightRandomButton();
+        }
+
+        function highlightRandomButton() {
+            if (timeLeft <= 0) return;
+            
+            document.querySelectorAll('.attention-btn').forEach(b => b.classList.remove('highlight'));
+            const buttons = document.querySelectorAll('.attention-btn');
+            const randomBtn = buttons[Math.floor(Math.random() * buttons.length)];
+            randomBtn.classList.add('highlight');
+        }
+
+        function handleAttentionClick(btn) {
+            if (btn.classList.contains('highlight')) {
+                btn.classList.remove('highlight');
+                btn.classList.add('correct');
+                attentionScore += 10;
+                document.getElementById('attentionScore').textContent = attentionScore;
+                setTimeout(() => {
+                    btn.classList.remove('correct');
+                    highlightRandomButton();
+                }, 200);
+            } else {
+                btn.classList.add('wrong');
+                attentionScore = Math.max(0, attentionScore - 5);
+                document.getElementById('attentionScore').textContent = attentionScore;
+                setTimeout(() => btn.classList.remove('wrong'), 200);
+            }
+        }
+
+        function startWordTest() {
+            currentTestType = 'word';
+            document.getElementById('testIntro').style.display = 'none';
+            document.getElementById('testActive').classList.add('show');
+            document.getElementById('testResult').classList.remove('show');
+            
+            hideAllGames();
+            document.getElementById('wordGame').style.display = 'block';
+            document.getElementById('wordDisplay').style.display = 'block';
+            document.getElementById('wordInputArea').style.display = 'none';
+            document.getElementById('testQuestion').textContent = 'Word Recall Test';
+            document.getElementById('testHint').textContent = 'Memorize the words shown';
+            
+            // Select random word list
+            currentWords = [...wordLists[Math.floor(Math.random() * wordLists.length)]];
+            recalledWords = [];
+            document.getElementById('recalledWords').innerHTML = '';
+            
+            // Display words
+            const wordsContainer = document.getElementById('wordsToRemember');
+            wordsContainer.innerHTML = '';
+            currentWords.forEach((word, index) => {
+                const chip = document.createElement('span');
+                chip.className = 'word-chip';
+                chip.textContent = word;
+                chip.style.animationDelay = `${index * 0.2}s`;
+                wordsContainer.appendChild(chip);
+            });
+
+            timeLeft = 10; // 10 seconds to memorize
+            startTimer();
+
+            // After memorization time, switch to recall
+            setTimeout(() => {
+                if (currentTestType === 'word') {
+                    document.getElementById('wordDisplay').style.display = 'none';
+                    document.getElementById('wordInputArea').style.display = 'block';
+                    document.getElementById('testHint').textContent = 'Type each word you remember and press Enter';
+                    document.getElementById('wordInput').focus();
+                    timeLeft = 30;
+                }
+            }, 10000);
+
+            // Setup input handler
+            document.getElementById('wordInput').onkeypress = (e) => {
+                if (e.key === 'Enter') {
+                    const input = e.target.value.trim();
+                    if (input) {
+                        addRecalledWord(input);
+                        e.target.value = '';
+                    }
+                }
+            };
+        }
+
+        function addRecalledWord(word) {
+            const isCorrect = currentWords.some(w => w.toLowerCase() === word.toLowerCase());
+            const container = document.getElementById('recalledWords');
+            const chip = document.createElement('span');
+            chip.className = 'recalled-chip' + (isCorrect ? '' : ' wrong');
+            chip.textContent = word;
+            container.appendChild(chip);
+            
+            if (isCorrect && !recalledWords.includes(word.toLowerCase())) {
+                recalledWords.push(word.toLowerCase());
+            }
+        }
+
+        function startPatternTest() {
+            currentTestType = 'pattern';
+            document.getElementById('testIntro').style.display = 'none';
+            document.getElementById('testActive').classList.add('show');
+            document.getElementById('testResult').classList.remove('show');
+            
+            hideAllGames();
+            document.getElementById('patternGame').style.display = 'block';
+            document.getElementById('testQuestion').textContent = 'Pattern Recognition Test';
+            document.getElementById('testHint').textContent = 'Watch the pattern, then repeat it';
+            
+            pattern = [];
+            playerPattern = [];
+            patternLevel = 1;
+            timeLeft = 60;
+
+            // Setup button handlers
+            document.querySelectorAll('.pattern-btn').forEach(btn => {
+                btn.onclick = () => handlePatternClick(parseInt(btn.dataset.id));
+                btn.disabled = true;
+            });
+
+            startTimer();
+            setTimeout(() => addToPattern(), 1000);
+        }
+
+        function addToPattern() {
+            pattern.push(Math.floor(Math.random() * 4));
+            showPattern();
+        }
+
+        function showPattern() {
+            isShowingPattern = true;
+            document.getElementById('patternStatus').textContent = 'Watch carefully...';
+            document.querySelectorAll('.pattern-btn').forEach(b => b.disabled = true);
+            
+            let i = 0;
+            const showNext = () => {
+                if (i > 0) {
+                    document.querySelectorAll('.pattern-btn')[pattern[i-1]].classList.remove('active');
+                }
+                if (i < pattern.length) {
+                    document.querySelectorAll('.pattern-btn')[pattern[i]].classList.add('active');
+                    i++;
+                    setTimeout(showNext, 600);
+                } else {
+                    setTimeout(() => {
+                        document.querySelectorAll('.pattern-btn').forEach(b => {
+                            b.classList.remove('active');
+                            b.disabled = false;
+                        });
+                        isShowingPattern = false;
+                        playerPattern = [];
+                        document.getElementById('patternStatus').textContent = 'Your turn! Repeat the pattern';
+                    }, 300);
+                }
+            };
+            showNext();
+        }
+
+        function handlePatternClick(id) {
+            if (isShowingPattern) return;
+            
+            const btn = document.querySelectorAll('.pattern-btn')[id];
+            btn.classList.add('active');
+            setTimeout(() => btn.classList.remove('active'), 200);
+            
+            playerPattern.push(id);
+            
+            // Check if correct so far
+            const currentIndex = playerPattern.length - 1;
+            if (playerPattern[currentIndex] !== pattern[currentIndex]) {
+                document.getElementById('patternStatus').textContent = 'Wrong! Game Over';
+                document.querySelectorAll('.pattern-btn').forEach(b => b.disabled = true);
+                setTimeout(() => endTest(), 1500);
+                return;
+            }
+            
+            // Check if pattern complete
+            if (playerPattern.length === pattern.length) {
+                patternLevel++;
+                document.getElementById('patternStatus').textContent = `Level ${patternLevel}! Get ready...`;
+                document.querySelectorAll('.pattern-btn').forEach(b => b.disabled = true);
+                setTimeout(() => addToPattern(), 1000);
+            }
+        }
+
+        function startTimer() {
             clearInterval(timerInterval);
+            document.getElementById('testTimer').textContent = `0:${timeLeft.toString().padStart(2, '0')}`;
+            
             timerInterval = setInterval(() => {
                 timeLeft--;
                 document.getElementById('testTimer').textContent = `0:${timeLeft.toString().padStart(2, '0')}`;
@@ -2866,32 +3319,64 @@
 
         function endTest() {
             clearInterval(timerInterval);
+            clearInterval(attentionInterval);
             document.getElementById('testActive').classList.remove('show');
             document.getElementById('testResult').classList.add('show');
             
-            const score = Math.round((matchedPairs / 6) * 100);
+            // Calculate score based on test type
+            let score = 0;
+            let details = '';
+            
+            switch(currentTestType) {
+                case 'memory':
+                    score = Math.round((matchedPairs / 6) * 100);
+                    details = `${matchedPairs}/6 pairs found`;
+                    break;
+                case 'attention':
+                    score = Math.min(100, attentionScore);
+                    details = `${attentionScore} points scored`;
+                    break;
+                case 'word':
+                    score = Math.round((recalledWords.length / currentWords.length) * 100);
+                    details = `${recalledWords.length}/${currentWords.length} words recalled`;
+                    break;
+                case 'pattern':
+                    score = Math.min(100, (patternLevel - 1) * 20);
+                    details = `Level ${patternLevel - 1} reached`;
+                    break;
+            }
+            
             document.getElementById('resultScore').textContent = score + '%';
+            
+            // Update result details
+            const resultCard = document.querySelector('.test-result .test-question-card');
+            const existingDetails = resultCard.querySelector('.result-details');
+            if (existingDetails) existingDetails.remove();
+            
+            const detailsDiv = document.createElement('div');
+            detailsDiv.className = 'result-details';
+            detailsDiv.style.cssText = 'display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; margin-bottom: 20px;';
+            detailsDiv.innerHTML = `
+                <div style="background: rgba(0,0,0,0.2); padding: 15px; border-radius: 10px;">
+                    <div style="font-size: 1.5rem; font-weight: 700; color: var(--accent-mint);">${details.split(' ')[0]}</div>
+                    <div style="font-size: 0.75rem; color: var(--text-muted);">${details.split(' ').slice(1).join(' ')}</div>
+                </div>
+                <div style="background: rgba(0,0,0,0.2); padding: 15px; border-radius: 10px;">
+                    <div style="font-size: 1.5rem; font-weight: 700; color: var(--accent-teal);">${30 - timeLeft}s</div>
+                    <div style="font-size: 0.75rem; color: var(--text-muted);">Time Used</div>
+                </div>
+            `;
+            
+            const insertPoint = resultCard.querySelector('.result-score').nextElementSibling;
+            insertPoint.after(detailsDiv);
         }
 
         function resetTest() {
             document.getElementById('testIntro').style.display = 'block';
             document.getElementById('testActive').classList.remove('show');
             document.getElementById('testResult').classList.remove('show');
-        }
-
-        function startAttentionTest() {
-            showToast('Starting Attention Test...', 'success');
-            startMemoryTest();
-        }
-
-        function startWordTest() {
-            showToast('Starting Word Recall Test...', 'success');
-            startMemoryTest();
-        }
-
-        function startPatternTest() {
-            showToast('Starting Pattern Recognition...', 'success');
-            startMemoryTest();
+            clearInterval(timerInterval);
+            clearInterval(attentionInterval);
         }
 
         // Emergency functions
@@ -2984,17 +3469,17 @@
 
         // Alzheimer's Association Course Links
         const alzCourseLinks = {
-            'warning-signs': 'https://training.alz.org/products/2033/10-warning-signs-of-alzheimers',
-            'understanding': 'https://training.alz.org/products/4028/understanding-alzheimers-and-dementia',
-            'behavior': 'https://training.alz.org/products/1021/understanding-and-responding-to-dementia-related-behavior',
-            'communication': 'https://training.alz.org/products/1020/effective-communication-strategies',
+            'warning-signs': 'https://www.alz.org/alzheimers-dementia/10_signs',
+            'understanding': 'https://training.alz.org/products/4053/understanding-alzheimers-and-dementia',
+            'behavior': 'https://training.alz.org/products/4037/understanding-and-responding-to-dementia-related-behavior',
+            'communication': 'https://training.alz.org/products/4036/effective-communication-strategies',
             'conversations': 'https://training.alz.org/products/4031/dementia-conversations',
-            'money': 'https://training.alz.org/products/2034/managing-money-a-caregivers-guide-to-finances',
+            'money': 'https://training.alz.org/products/4355/managing-money-a-caregivers-guide-to-finances',
             'living-early': 'https://training.alz.org/products/1019/living-with-alzheimers-for-caregivers-early-stage',
-            'living-middle': 'https://training.alz.org/products/1022/living-with-alzheimers-for-caregivers-middle-stage',
-            'living-late': 'https://training.alz.org/products/1023/living-with-alzheimers-for-caregivers-late-stage',
+            'living-middle': 'https://training.alz.org/products/1023/living-with-alzheimers-for-caregivers-middle-stage',
+            'living-late': 'https://training.alz.org/products/1024/living-with-alzheimers-for-caregivers-late-stage',
             'living-patient': 'https://training.alz.org/products/1018/living-with-alzheimers-for-people-with-alzheimers',
-            'living-younger': 'https://training.alz.org/products/1024/living-with-alzheimers-for-younger-onset-alzheimers'
+            'living-younger': 'https://www.alz.org/alzheimers-dementia/what-is-alzheimers/younger-early-onset'
         };
 
         function openAlzCourse(courseId) {
