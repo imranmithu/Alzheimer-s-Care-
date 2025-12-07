@@ -317,6 +317,156 @@
             gap: 10px;
         }
 
+        .subsection-title {
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 12px;
+            color: var(--text-muted);
+        }
+
+        /* Compact Vitals for Home */
+        .vitals-compact {
+            background: var(--glass-bg);
+            border-radius: 16px;
+            border: 1px solid var(--glass-border);
+            padding: 15px;
+            margin-bottom: 20px;
+        }
+
+        .vitals-compact h4 {
+            font-size: 0.9rem;
+            margin-bottom: 12px;
+        }
+
+        .vitals-row {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 8px;
+            margin-bottom: 12px;
+        }
+
+        .vital-mini {
+            text-align: center;
+            padding: 10px 5px;
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+        }
+
+        .vital-mini-icon {
+            display: block;
+            font-size: 1.2rem;
+            margin-bottom: 4px;
+        }
+
+        .vital-mini-value {
+            display: block;
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--text-white);
+        }
+
+        .vital-mini-label {
+            display: block;
+            font-size: 0.65rem;
+            color: var(--text-muted);
+        }
+
+        .vitals-status-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .status-indicator {
+            font-size: 0.8rem;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .status-indicator.good {
+            color: var(--accent-mint);
+        }
+
+        .sync-btn {
+            background: var(--purple-deep);
+            border: 1px solid var(--glass-border);
+            color: var(--text-white);
+            padding: 6px 12px;
+            border-radius: 15px;
+            font-size: 0.75rem;
+            cursor: pointer;
+        }
+
+        /* Inner Tabs for merged sections */
+        .inner-tabs {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 20px;
+        }
+
+        .inner-tab {
+            flex: 1;
+            padding: 12px;
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: 12px;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+
+        .inner-tab:hover {
+            background: var(--purple-deep);
+        }
+
+        .inner-tab.active {
+            background: var(--purple-bright);
+            border-color: transparent;
+            color: white;
+        }
+
+        .inner-content {
+            display: none;
+        }
+
+        .inner-content.active {
+            display: block;
+            animation: fadeIn 0.3s ease;
+        }
+
+        /* Badge styles */
+        .badge-new {
+            background: var(--accent-coral);
+            color: white;
+            padding: 3px 10px;
+            border-radius: 20px;
+            font-size: 0.65rem;
+            font-weight: 700;
+            margin-left: auto;
+            text-transform: uppercase;
+        }
+
+        /* VR benefits mini */
+        .vr-benefits-mini {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 12px;
+        }
+
+        .vr-benefits-mini span {
+            background: rgba(123, 75, 184, 0.2);
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            color: var(--purple-glow);
+        }
+
         /* Weather Section */
         .weather-cards {
             display: grid;
@@ -2059,6 +2209,1339 @@
                 box-shadow: none;
             }
         }
+
+        /* Vital Signs Styles */
+        .vitals-overview {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+            margin-bottom: 20px;
+        }
+
+        .vital-card {
+            background: var(--glass-bg);
+            border-radius: 16px;
+            border: 1px solid var(--glass-border);
+            padding: 15px;
+            text-align: center;
+        }
+
+        .vital-icon {
+            font-size: 1.5rem;
+            margin-bottom: 8px;
+        }
+
+        .vital-data {
+            display: flex;
+            align-items: baseline;
+            justify-content: center;
+            gap: 4px;
+        }
+
+        .vital-value {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--text-white);
+        }
+
+        .vital-unit {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+        }
+
+        .vital-label {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            margin: 5px 0;
+        }
+
+        .vital-status {
+            font-size: 0.7rem;
+            padding: 3px 10px;
+            border-radius: 10px;
+            display: inline-block;
+        }
+
+        .vital-status.normal {
+            background: rgba(107, 203, 119, 0.2);
+            color: var(--accent-mint);
+        }
+
+        .vitals-chart-card {
+            background: var(--glass-bg);
+            border-radius: 16px;
+            border: 1px solid var(--glass-border);
+            padding: 20px;
+            margin-bottom: 15px;
+        }
+
+        .vitals-chart-card h4 {
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+        }
+
+        .chart-container {
+            height: 80px;
+            margin-bottom: 10px;
+        }
+
+        .trend-chart {
+            width: 100%;
+            height: 100%;
+        }
+
+        .chart-labels {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.7rem;
+            color: var(--text-muted);
+        }
+
+        .vitals-alert-card {
+            background: rgba(107, 203, 119, 0.1);
+            border: 1px solid rgba(107, 203, 119, 0.3);
+            border-radius: 15px;
+            padding: 15px;
+        }
+
+        .alert-header {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 8px;
+        }
+
+        .alert-header h4 {
+            font-size: 0.9rem;
+            color: var(--accent-mint);
+        }
+
+        .vitals-alert-card p {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            line-height: 1.4;
+        }
+
+        /* Medication Styles */
+        .med-schedule-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .med-schedule-header h4 {
+            font-size: 1rem;
+        }
+
+        .med-date {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        .medication-timeline {
+            margin-bottom: 20px;
+        }
+
+        .med-time-slot {
+            margin-bottom: 15px;
+            padding-left: 20px;
+            border-left: 2px solid var(--glass-border);
+            position: relative;
+        }
+
+        .med-time-slot::before {
+            content: '';
+            position: absolute;
+            left: -6px;
+            top: 0;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: var(--glass-border);
+        }
+
+        .med-time-slot.completed::before {
+            background: var(--accent-mint);
+        }
+
+        .med-time-slot.current::before {
+            background: var(--accent-gold);
+            box-shadow: 0 0 10px var(--accent-gold);
+        }
+
+        .med-time {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--text-muted);
+            margin-bottom: 10px;
+        }
+
+        .med-item {
+            background: var(--glass-bg);
+            border-radius: 12px;
+            border: 1px solid var(--glass-border);
+            padding: 12px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 8px;
+        }
+
+        .med-icon {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.9rem;
+        }
+
+        .med-icon.taken {
+            background: var(--accent-mint);
+            color: var(--purple-darkest);
+        }
+
+        .med-icon.pending-icon {
+            background: var(--accent-gold);
+            color: var(--purple-darkest);
+        }
+
+        .med-icon.upcoming-icon {
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+        }
+
+        .med-info {
+            flex: 1;
+        }
+
+        .med-info h5 {
+            font-size: 0.9rem;
+            margin-bottom: 2px;
+        }
+
+        .med-info p {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+        }
+
+        .med-take-btn {
+            background: var(--accent-gold);
+            color: var(--purple-darkest);
+            border: none;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            cursor: pointer;
+        }
+
+        .med-stats {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+            margin-bottom: 20px;
+        }
+
+        .med-stat {
+            background: var(--glass-bg);
+            border-radius: 12px;
+            padding: 15px;
+            text-align: center;
+        }
+
+        .med-stat-value {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--accent-mint);
+            display: block;
+        }
+
+        .med-stat-label {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+        }
+
+        .notification-settings {
+            background: var(--glass-bg);
+            border-radius: 16px;
+            padding: 20px;
+            margin-bottom: 15px;
+        }
+
+        .notification-settings h4 {
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+        }
+
+        .notification-option {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 0;
+            border-bottom: 1px solid var(--glass-border);
+        }
+
+        .notification-option:last-child {
+            border-bottom: none;
+        }
+
+        .notification-option span {
+            font-size: 0.85rem;
+        }
+
+        .toggle {
+            position: relative;
+            width: 50px;
+            height: 26px;
+        }
+
+        .toggle input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+
+        .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: var(--purple-deep);
+            border-radius: 26px;
+            transition: 0.3s;
+        }
+
+        .slider::before {
+            position: absolute;
+            content: '';
+            height: 20px;
+            width: 20px;
+            left: 3px;
+            bottom: 3px;
+            background: white;
+            border-radius: 50%;
+            transition: 0.3s;
+        }
+
+        .toggle input:checked + .slider {
+            background: var(--accent-mint);
+        }
+
+        .toggle input:checked + .slider::before {
+            transform: translateX(24px);
+        }
+
+        .btn-secondary {
+            width: 100%;
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            color: var(--text-white);
+            padding: 14px;
+            border-radius: 30px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .btn-secondary:hover {
+            background: var(--purple-deep);
+            border-color: var(--purple-bright);
+        }
+
+        /* Memory Album Styles */
+        .section-desc {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            margin-bottom: 20px;
+            line-height: 1.4;
+        }
+
+        .memory-albums {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+            margin-bottom: 20px;
+        }
+
+        .album-card {
+            background: var(--glass-bg);
+            border-radius: 16px;
+            border: 1px solid var(--glass-border);
+            overflow: hidden;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .album-card:hover {
+            transform: translateY(-3px);
+            border-color: var(--purple-bright);
+        }
+
+        .album-cover {
+            height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+        }
+
+        .album-info {
+            padding: 12px;
+        }
+
+        .album-info h5 {
+            font-size: 0.9rem;
+            margin-bottom: 2px;
+        }
+
+        .album-info p {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+        }
+
+        .featured-memory {
+            margin-bottom: 20px;
+        }
+
+        .featured-memory h4 {
+            font-size: 1rem;
+            margin-bottom: 12px;
+        }
+
+        .memory-card-large {
+            background: var(--glass-bg);
+            border-radius: 16px;
+            border: 1px solid var(--glass-border);
+            overflow: hidden;
+        }
+
+        .memory-image {
+            height: 150px;
+            background: linear-gradient(135deg, var(--purple-deep) 0%, var(--purple-main) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .memory-placeholder {
+            font-size: 3rem;
+            opacity: 0.5;
+        }
+
+        .memory-story {
+            padding: 15px;
+        }
+
+        .memory-story h5 {
+            font-size: 1rem;
+            margin-bottom: 8px;
+        }
+
+        .memory-story p {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            line-height: 1.5;
+            font-style: italic;
+        }
+
+        .memory-author {
+            display: block;
+            margin-top: 10px;
+            font-size: 0.8rem;
+            color: var(--purple-glow);
+            font-style: normal;
+        }
+
+        .memory-people h4 {
+            font-size: 1rem;
+            margin-bottom: 12px;
+        }
+
+        .people-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .person-card {
+            text-align: center;
+            cursor: pointer;
+        }
+
+        .person-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 8px;
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+
+        .person-card span {
+            display: block;
+            font-size: 0.8rem;
+        }
+
+        .person-card small {
+            font-size: 0.7rem;
+            color: var(--text-muted);
+        }
+
+        /* Coordination Styles */
+        .care-calendar {
+            background: var(--glass-bg);
+            border-radius: 16px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+
+        .care-calendar h4 {
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+        }
+
+        .calendar-week {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            gap: 5px;
+        }
+
+        .calendar-day {
+            text-align: center;
+            padding: 8px 4px;
+        }
+
+        .day-name {
+            display: block;
+            font-size: 0.7rem;
+            color: var(--text-muted);
+            margin-bottom: 5px;
+        }
+
+        .day-num {
+            display: block;
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .day-num.today {
+            background: var(--purple-bright);
+            border-radius: 50%;
+            width: 28px;
+            height: 28px;
+            line-height: 28px;
+            margin: 0 auto 8px;
+        }
+
+        .day-assignee {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            margin: 0 auto;
+            font-size: 0.6rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .care-team {
+            background: var(--glass-bg);
+            border-radius: 16px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+
+        .care-team h4 {
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+        }
+
+        .team-member {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 12px 0;
+            border-bottom: 1px solid var(--glass-border);
+        }
+
+        .team-member:last-child {
+            border-bottom: none;
+        }
+
+        .member-avatar {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+        }
+
+        .member-info {
+            flex: 1;
+        }
+
+        .member-info h5 {
+            font-size: 0.9rem;
+            margin-bottom: 2px;
+        }
+
+        .member-info p {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+        }
+
+        .member-status {
+            font-size: 0.8rem;
+        }
+
+        .member-status.online {
+            color: var(--accent-mint);
+        }
+
+        .member-status.offline {
+            color: var(--text-muted);
+        }
+
+        .task-list {
+            background: var(--glass-bg);
+            border-radius: 16px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+
+        .task-list h4 {
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+        }
+
+        .task-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 10px 0;
+            border-bottom: 1px solid var(--glass-border);
+            cursor: pointer;
+        }
+
+        .task-item:last-child {
+            border-bottom: none;
+        }
+
+        .task-item input[type="checkbox"] {
+            width: 20px;
+            height: 20px;
+            accent-color: var(--accent-mint);
+        }
+
+        .task-text {
+            flex: 1;
+            font-size: 0.85rem;
+        }
+
+        .task-assignee {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            background: var(--purple-deep);
+            padding: 3px 8px;
+            border-radius: 10px;
+        }
+
+        .care-notes {
+            background: var(--glass-bg);
+            border-radius: 16px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+
+        .care-notes h4 {
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+        }
+
+        .note-input {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+
+        .note-input textarea {
+            flex: 1;
+            background: var(--purple-deep);
+            border: 1px solid var(--glass-border);
+            border-radius: 12px;
+            padding: 12px;
+            color: var(--text-white);
+            font-size: 0.85rem;
+            resize: none;
+            min-height: 60px;
+        }
+
+        .note-input button {
+            background: var(--purple-bright);
+            border: none;
+            color: white;
+            padding: 0 20px;
+            border-radius: 12px;
+            cursor: pointer;
+        }
+
+        .note-item {
+            padding: 12px 0;
+            border-bottom: 1px solid var(--glass-border);
+        }
+
+        .note-item:last-child {
+            border-bottom: none;
+        }
+
+        .note-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 5px;
+        }
+
+        .note-author {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--purple-glow);
+        }
+
+        .note-time {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+        }
+
+        .note-item p {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            line-height: 1.4;
+        }
+
+        /* Community Styles */
+        .community-header p {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            margin-bottom: 20px;
+        }
+
+        .community-stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .comm-stat {
+            background: var(--glass-bg);
+            border-radius: 12px;
+            padding: 15px;
+            text-align: center;
+        }
+
+        .stat-num {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--purple-glow);
+            display: block;
+        }
+
+        .stat-label {
+            font-size: 0.7rem;
+            color: var(--text-muted);
+        }
+
+        .community-groups {
+            margin-bottom: 20px;
+        }
+
+        .community-groups h4 {
+            font-size: 1rem;
+            margin-bottom: 12px;
+        }
+
+        .group-card {
+            background: var(--glass-bg);
+            border-radius: 12px;
+            border: 1px solid var(--glass-border);
+            padding: 15px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 10px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .group-card:hover {
+            border-color: var(--purple-bright);
+        }
+
+        .group-icon {
+            width: 45px;
+            height: 45px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3rem;
+        }
+
+        .group-info {
+            flex: 1;
+        }
+
+        .group-info h5 {
+            font-size: 0.9rem;
+            margin-bottom: 2px;
+        }
+
+        .group-info p {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+        }
+
+        .join-btn {
+            background: var(--purple-bright);
+            border: none;
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            cursor: pointer;
+        }
+
+        .community-feed {
+            margin-bottom: 20px;
+        }
+
+        .community-feed h4 {
+            font-size: 1rem;
+            margin-bottom: 12px;
+        }
+
+        .feed-post {
+            background: var(--glass-bg);
+            border-radius: 16px;
+            border: 1px solid var(--glass-border);
+            padding: 15px;
+            margin-bottom: 12px;
+        }
+
+        .post-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 12px;
+        }
+
+        .post-avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            font-size: 0.85rem;
+        }
+
+        .post-author h5 {
+            font-size: 0.9rem;
+            margin-bottom: 2px;
+        }
+
+        .post-author span {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+        }
+
+        .post-content {
+            font-size: 0.9rem;
+            line-height: 1.5;
+            margin-bottom: 12px;
+        }
+
+        .post-actions {
+            display: flex;
+            gap: 15px;
+        }
+
+        .post-actions button {
+            background: none;
+            border: none;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+
+        .post-actions button:hover {
+            color: var(--purple-glow);
+        }
+
+        .find-friends {
+            margin-bottom: 20px;
+        }
+
+        .find-friends h4 {
+            font-size: 1rem;
+            margin-bottom: 12px;
+        }
+
+        .caregiver-card {
+            background: var(--glass-bg);
+            border-radius: 12px;
+            padding: 15px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 10px;
+        }
+
+        .cg-avatar {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+        }
+
+        .cg-info {
+            flex: 1;
+        }
+
+        .cg-info h5 {
+            font-size: 0.9rem;
+            margin-bottom: 2px;
+        }
+
+        .cg-info p {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+        }
+
+        .connect-btn {
+            background: transparent;
+            border: 1px solid var(--purple-bright);
+            color: var(--purple-glow);
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            cursor: pointer;
+        }
+
+        /* Events Styles */
+        .events-filter {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 20px;
+            overflow-x: auto;
+        }
+
+        .filter-btn {
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            color: var(--text-muted);
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            cursor: pointer;
+            white-space: nowrap;
+        }
+
+        .filter-btn.active {
+            background: var(--purple-bright);
+            border-color: transparent;
+            color: white;
+        }
+
+        .featured-event {
+            background: var(--glass-bg);
+            border-radius: 20px;
+            border: 1px solid var(--glass-border);
+            overflow: hidden;
+            margin-bottom: 20px;
+            position: relative;
+        }
+
+        .event-badge {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            background: var(--accent-gold);
+            color: var(--purple-darkest);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.7rem;
+            font-weight: 600;
+            z-index: 1;
+        }
+
+        .event-image {
+            height: 140px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+        }
+
+        .event-image.walk {
+            background: linear-gradient(135deg, var(--purple-bright) 0%, var(--accent-teal) 100%);
+        }
+
+        .event-details {
+            padding: 20px;
+        }
+
+        .event-date {
+            font-size: 0.8rem;
+            color: var(--accent-gold);
+            font-weight: 600;
+        }
+
+        .event-details h4 {
+            font-size: 1.1rem;
+            margin: 8px 0;
+        }
+
+        .event-details p {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            line-height: 1.4;
+            margin-bottom: 12px;
+        }
+
+        .event-meta {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 15px;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+        }
+
+        .upcoming-events h4 {
+            font-size: 1rem;
+            margin-bottom: 12px;
+        }
+
+        .event-item {
+            background: var(--glass-bg);
+            border-radius: 12px;
+            border: 1px solid var(--glass-border);
+            padding: 15px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 10px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .event-item:hover {
+            border-color: var(--purple-bright);
+        }
+
+        .event-date-box {
+            width: 50px;
+            text-align: center;
+            background: var(--purple-deep);
+            border-radius: 10px;
+            padding: 8px;
+        }
+
+        .event-date-box .month {
+            display: block;
+            font-size: 0.7rem;
+            color: var(--accent-coral);
+            font-weight: 600;
+        }
+
+        .event-date-box .day {
+            display: block;
+            font-size: 1.3rem;
+            font-weight: 700;
+        }
+
+        .event-info {
+            flex: 1;
+        }
+
+        .event-info h5 {
+            font-size: 0.9rem;
+            margin-bottom: 4px;
+        }
+
+        .event-info p {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            margin-bottom: 4px;
+        }
+
+        .event-location {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+        }
+
+        .alz-events-link {
+            margin-top: 20px;
+        }
+
+        .external-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: 12px;
+            padding: 15px;
+            color: var(--purple-glow);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+        }
+
+        .external-link:hover {
+            background: var(--purple-deep);
+            border-color: var(--purple-bright);
+        }
+
+        /* VR Training Styles */
+        .vr-hero {
+            background: linear-gradient(135deg, rgba(123, 75, 184, 0.3) 0%, rgba(78, 205, 196, 0.2) 100%);
+            border: 1px solid var(--glass-border);
+            border-radius: 20px;
+            padding: 30px 20px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .vr-icon {
+            width: 100px;
+            margin: 0 auto 15px;
+        }
+
+        .vr-icon svg {
+            width: 100%;
+        }
+
+        .vr-hero h3 {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+
+        .vr-hero p {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            line-height: 1.4;
+        }
+
+        .vr-program-card {
+            background: var(--glass-bg);
+            border-radius: 20px;
+            border: 1px solid var(--glass-border);
+            padding: 20px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+            margin-bottom: 20px;
+        }
+
+        .vr-program-card:hover {
+            border-color: var(--accent-teal);
+            transform: translateY(-3px);
+        }
+
+        .vr-program-badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: linear-gradient(135deg, #0668E1 0%, #00C8FF 100%);
+            color: white;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.7rem;
+            font-weight: 600;
+        }
+
+        .vr-program-content h4 {
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+            color: var(--accent-teal);
+        }
+
+        .vr-program-content p {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            line-height: 1.4;
+            margin-bottom: 15px;
+        }
+
+        .vr-features {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 12px;
+        }
+
+        .vr-features span {
+            font-size: 0.75rem;
+            color: var(--accent-mint);
+        }
+
+        .vr-platforms {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+        }
+
+        .vr-arrow {
+            position: absolute;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 1.5rem;
+            color: var(--text-muted);
+        }
+
+        .vr-benefits {
+            margin-bottom: 20px;
+        }
+
+        .vr-benefits h4 {
+            font-size: 1rem;
+            margin-bottom: 15px;
+        }
+
+        .benefit-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+        }
+
+        .benefit-item {
+            background: var(--glass-bg);
+            border-radius: 12px;
+            padding: 15px;
+            text-align: center;
+        }
+
+        .benefit-icon {
+            font-size: 1.5rem;
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        .benefit-item h5 {
+            font-size: 0.85rem;
+            margin-bottom: 5px;
+        }
+
+        .benefit-item p {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            line-height: 1.3;
+        }
+
+        .other-vr-programs h4 {
+            font-size: 1rem;
+            margin-bottom: 12px;
+        }
+
+        .vr-item {
+            background: var(--glass-bg);
+            border-radius: 12px;
+            border: 1px solid var(--glass-border);
+            padding: 15px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 10px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .vr-item:hover {
+            border-color: var(--purple-bright);
+        }
+
+        .vr-item-icon {
+            width: 40px;
+            height: 40px;
+            background: var(--purple-deep);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+        }
+
+        .vr-item-info {
+            flex: 1;
+        }
+
+        .vr-item-info h5 {
+            font-size: 0.9rem;
+            margin-bottom: 2px;
+        }
+
+        .vr-item-info p {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+        }
+
+        .vr-research {
+            background: var(--glass-bg);
+            border-radius: 16px;
+            padding: 20px;
+            margin-top: 20px;
+        }
+
+        .vr-research h4 {
+            font-size: 1rem;
+            margin-bottom: 15px;
+        }
+
+        .research-stats {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+        }
+
+        .research-stat {
+            text-align: center;
+        }
+
+        .research-num {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--accent-coral);
+            display: block;
+        }
+
+        .research-stat p {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            line-height: 1.3;
+        }
     </style>
 </head>
 <body>
@@ -2132,17 +3615,53 @@
 
         <!-- Navigation Tabs -->
         <div class="nav-tabs">
-            <button class="nav-tab active" onclick="switchSection('weather')">Weather</button>
-            <button class="nav-tab" onclick="switchSection('cognitive')">Cognitive Test</button>
+            <button class="nav-tab active" onclick="switchSection('weather')">Home</button>
+            <button class="nav-tab" onclick="switchSection('medication')">Medication</button>
+            <button class="nav-tab" onclick="switchSection('cognitive')">Tests</button>
             <button class="nav-tab" onclick="switchSection('emergency')">Emergency</button>
+            <button class="nav-tab" onclick="switchSection('memory')">Family & Memories</button>
+            <button class="nav-tab" onclick="switchSection('community')">Community</button>
             <button class="nav-tab" onclick="switchSection('learning')">Learning</button>
         </div>
 
-        <!-- Weather Section -->
+        <!-- Weather Section (Home) -->
         <section id="weather" class="section active">
             <h2 class="section-title">
-                <span>🌤️</span> Weather & Air Quality
+                <span>🏠</span> Home Dashboard
             </h2>
+
+            <!-- Vital Signs Overview -->
+            <div class="vitals-compact">
+                <h4 class="subsection-title">💓 Vital Signs</h4>
+                <div class="vitals-row">
+                    <div class="vital-mini">
+                        <span class="vital-mini-icon">❤️</span>
+                        <span class="vital-mini-value" id="heartRate">72</span>
+                        <span class="vital-mini-label">BPM</span>
+                    </div>
+                    <div class="vital-mini">
+                        <span class="vital-mini-icon">🩺</span>
+                        <span class="vital-mini-value">118/76</span>
+                        <span class="vital-mini-label">BP</span>
+                    </div>
+                    <div class="vital-mini">
+                        <span class="vital-mini-icon">🫁</span>
+                        <span class="vital-mini-value">98%</span>
+                        <span class="vital-mini-label">O₂</span>
+                    </div>
+                    <div class="vital-mini">
+                        <span class="vital-mini-icon">🌡️</span>
+                        <span class="vital-mini-value">98.4°</span>
+                        <span class="vital-mini-label">Temp</span>
+                    </div>
+                </div>
+                <div class="vitals-status-bar">
+                    <span class="status-indicator good">✓ All vitals normal</span>
+                    <button class="sync-btn" onclick="syncVitals()">🔄 Sync</button>
+                </div>
+            </div>
+
+            <h4 class="subsection-title">🌤️ Weather & Air Quality</h4>
             
             <div class="weather-cards">
                 <!-- Outdoor Weather -->
@@ -2265,7 +3784,587 @@
             </div>
         </section>
 
-        <!-- Cognitive Test Section -->
+        <!-- Medication Reminder Section -->
+        <section id="medication" class="section">
+            <h2 class="section-title">
+                <span>💊</span> Medication Reminders
+            </h2>
+
+            <div class="med-schedule-header">
+                <h4>Today's Schedule</h4>
+                <span class="med-date">Sunday, Dec 7</span>
+            </div>
+
+            <div class="medication-timeline">
+                <div class="med-time-slot completed">
+                    <div class="med-time">8:00 AM</div>
+                    <div class="med-items">
+                        <div class="med-item">
+                            <div class="med-icon taken">✓</div>
+                            <div class="med-info">
+                                <h5>Donepezil (Aricept)</h5>
+                                <p>10mg • Memory & Cognition</p>
+                            </div>
+                        </div>
+                        <div class="med-item">
+                            <div class="med-icon taken">✓</div>
+                            <div class="med-info">
+                                <h5>Lisinopril</h5>
+                                <p>5mg • Blood Pressure</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="med-time-slot current">
+                    <div class="med-time">12:00 PM</div>
+                    <div class="med-items">
+                        <div class="med-item pending" onclick="markMedTaken(this)">
+                            <div class="med-icon pending-icon">⏰</div>
+                            <div class="med-info">
+                                <h5>Memantine (Namenda)</h5>
+                                <p>10mg • Memory Function</p>
+                            </div>
+                            <button class="med-take-btn">Take</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="med-time-slot upcoming">
+                    <div class="med-time">6:00 PM</div>
+                    <div class="med-items">
+                        <div class="med-item">
+                            <div class="med-icon upcoming-icon">⏳</div>
+                            <div class="med-info">
+                                <h5>Vitamin D3</h5>
+                                <p>2000 IU • Bone Health</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="med-time-slot upcoming">
+                    <div class="med-time">9:00 PM</div>
+                    <div class="med-items">
+                        <div class="med-item">
+                            <div class="med-icon upcoming-icon">⏳</div>
+                            <div class="med-info">
+                                <h5>Melatonin</h5>
+                                <p>3mg • Sleep Aid</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="med-stats">
+                <div class="med-stat">
+                    <span class="med-stat-value">95%</span>
+                    <span class="med-stat-label">Adherence This Week</span>
+                </div>
+                <div class="med-stat">
+                    <span class="med-stat-value">2/4</span>
+                    <span class="med-stat-label">Taken Today</span>
+                </div>
+            </div>
+
+            <div class="notification-settings">
+                <h4>🔔 Notification Settings</h4>
+                <div class="notification-option">
+                    <span>Push Notifications</span>
+                    <label class="toggle">
+                        <input type="checkbox" checked>
+                        <span class="slider"></span>
+                    </label>
+                </div>
+                <div class="notification-option">
+                    <span>Sound Alerts</span>
+                    <label class="toggle">
+                        <input type="checkbox" checked>
+                        <span class="slider"></span>
+                    </label>
+                </div>
+                <div class="notification-option">
+                    <span>Caregiver Alerts</span>
+                    <label class="toggle">
+                        <input type="checkbox" checked>
+                        <span class="slider"></span>
+                    </label>
+                </div>
+                <div class="notification-option">
+                    <span>Reminder: 15 min before</span>
+                    <label class="toggle">
+                        <input type="checkbox" checked>
+                        <span class="slider"></span>
+                    </label>
+                </div>
+            </div>
+
+            <button class="btn-secondary" onclick="addMedication()">
+                ➕ Add New Medication
+            </button>
+        </section>
+
+        <!-- Family & Memories Section (Merged) -->
+        <section id="memory" class="section">
+            <h2 class="section-title">
+                <span>👨‍👩‍👧</span> Family & Memories
+            </h2>
+
+            <!-- Tab Switcher -->
+            <div class="inner-tabs">
+                <button class="inner-tab active" onclick="switchInnerTab(this, 'memories-content')">📸 Memories</button>
+                <button class="inner-tab" onclick="switchInnerTab(this, 'coordinate-content')">📅 Coordination</button>
+            </div>
+
+            <!-- Memories Content -->
+            <div id="memories-content" class="inner-content active">
+                <p class="section-desc">Preserve precious memories and help Eleanor stay connected to loved ones through photos and stories.</p>
+
+                <div class="memory-albums">
+                    <div class="album-card" onclick="openAlbum('family')">
+                        <div class="album-cover" style="background: linear-gradient(135deg, var(--accent-coral) 0%, #ff9a56 100%);">
+                            <span>👨‍👩‍👧‍👦</span>
+                        </div>
+                        <div class="album-info">
+                            <h5>Family</h5>
+                            <p>24 photos</p>
+                        </div>
+                    </div>
+
+                    <div class="album-card" onclick="openAlbum('childhood')">
+                        <div class="album-cover" style="background: linear-gradient(135deg, var(--accent-teal) 0%, #45b7aa 100%);">
+                            <span>🌅</span>
+                        </div>
+                        <div class="album-info">
+                            <h5>Childhood</h5>
+                            <p>18 photos</p>
+                        </div>
+                    </div>
+
+                    <div class="album-card" onclick="openAlbum('wedding')">
+                        <div class="album-cover" style="background: linear-gradient(135deg, var(--purple-bright) 0%, var(--purple-light) 100%);">
+                            <span>💒</span>
+                        </div>
+                        <div class="album-info">
+                            <h5>Wedding</h5>
+                            <p>32 photos</p>
+                        </div>
+                    </div>
+
+                    <div class="album-card" onclick="openAlbum('holidays')">
+                        <div class="album-cover" style="background: linear-gradient(135deg, var(--accent-gold) 0%, #ffb347 100%);">
+                            <span>🎄</span>
+                        </div>
+                        <div class="album-info">
+                            <h5>Holidays</h5>
+                            <p>45 photos</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="featured-memory">
+                    <h4>✨ Today's Memory</h4>
+                    <div class="memory-card-large">
+                        <div class="memory-image">
+                            <div class="memory-placeholder">📷</div>
+                        </div>
+                        <div class="memory-story">
+                            <h5>Family Reunion - Summer 1985</h5>
+                            <p>"This was the summer we all went to Lake Tahoe. Eleanor loved to swim and would spend hours in the water with the grandchildren. Dad was manning the grill as always!"</p>
+                            <span class="memory-author">— Added by Michael</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="memory-people">
+                    <h4>👥 People in Eleanor's Life</h4>
+                    <div class="people-grid">
+                        <div class="person-card" onclick="showPerson('Michael')">
+                            <div class="person-avatar" style="background: var(--accent-coral);">M</div>
+                            <span>Michael</span>
+                            <small>Son</small>
+                        </div>
+                        <div class="person-card" onclick="showPerson('Sarah')">
+                            <div class="person-avatar" style="background: var(--accent-teal);">S</div>
+                            <span>Sarah</span>
+                            <small>Daughter</small>
+                        </div>
+                        <div class="person-card" onclick="showPerson('Robert')">
+                            <div class="person-avatar" style="background: var(--purple-bright);">R</div>
+                            <span>Robert</span>
+                            <small>Husband</small>
+                        </div>
+                        <div class="person-card" onclick="showPerson('Emma')">
+                            <div class="person-avatar" style="background: var(--accent-gold);">E</div>
+                            <span>Emma</span>
+                            <small>Granddaughter</small>
+                        </div>
+                    </div>
+                </div>
+
+                <button class="btn-primary" style="width: 100%;" onclick="addMemory()">
+                    📷 Add New Memory
+                </button>
+            </div>
+
+            <!-- Coordination Content -->
+            <div id="coordinate-content" class="inner-content">
+                <div class="care-calendar">
+                    <h4>📅 Care Schedule This Week</h4>
+                    <div class="calendar-week">
+                        <div class="calendar-day">
+                            <span class="day-name">Sun</span>
+                            <span class="day-num today">7</span>
+                            <div class="day-assignee" style="background: var(--accent-coral);">M</div>
+                        </div>
+                        <div class="calendar-day">
+                            <span class="day-name">Mon</span>
+                            <span class="day-num">8</span>
+                            <div class="day-assignee" style="background: var(--accent-teal);">S</div>
+                        </div>
+                        <div class="calendar-day">
+                            <span class="day-name">Tue</span>
+                            <span class="day-num">9</span>
+                            <div class="day-assignee" style="background: var(--purple-bright);">MR</div>
+                        </div>
+                        <div class="calendar-day">
+                            <span class="day-name">Wed</span>
+                            <span class="day-num">10</span>
+                            <div class="day-assignee" style="background: var(--accent-coral);">M</div>
+                        </div>
+                        <div class="calendar-day">
+                            <span class="day-name">Thu</span>
+                            <span class="day-num">11</span>
+                            <div class="day-assignee" style="background: var(--accent-teal);">S</div>
+                        </div>
+                        <div class="calendar-day">
+                            <span class="day-name">Fri</span>
+                            <span class="day-num">12</span>
+                            <div class="day-assignee" style="background: var(--purple-bright);">MR</div>
+                        </div>
+                        <div class="calendar-day">
+                            <span class="day-name">Sat</span>
+                            <span class="day-num">13</span>
+                            <div class="day-assignee" style="background: var(--accent-gold);">ALL</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="care-team">
+                    <h4>👥 Care Team</h4>
+                    <div class="team-members">
+                        <div class="team-member">
+                            <div class="member-avatar" style="background: var(--accent-coral);">M</div>
+                            <div class="member-info">
+                                <h5>Michael (Son)</h5>
+                                <p>Primary Caregiver • 3 days/week</p>
+                            </div>
+                            <span class="member-status online">●</span>
+                        </div>
+                        <div class="team-member">
+                            <div class="member-avatar" style="background: var(--accent-teal);">S</div>
+                            <div class="member-info">
+                                <h5>Sarah (Daughter)</h5>
+                                <p>Weekend Support • 2 days/week</p>
+                            </div>
+                            <span class="member-status online">●</span>
+                        </div>
+                        <div class="team-member">
+                            <div class="member-avatar" style="background: var(--purple-bright);">MR</div>
+                            <div class="member-info">
+                                <h5>Maria Rodriguez</h5>
+                                <p>Professional Caregiver • 2 days/week</p>
+                            </div>
+                            <span class="member-status offline">●</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="task-list">
+                    <h4>✅ Today's Care Tasks</h4>
+                    <div class="tasks">
+                        <label class="task-item">
+                            <input type="checkbox" checked>
+                            <span class="task-text">Morning medication given</span>
+                            <span class="task-assignee">Michael</span>
+                        </label>
+                        <label class="task-item">
+                            <input type="checkbox" checked>
+                            <span class="task-text">Breakfast completed</span>
+                            <span class="task-assignee">Michael</span>
+                        </label>
+                        <label class="task-item">
+                            <input type="checkbox">
+                            <span class="task-text">Physical therapy exercises</span>
+                            <span class="task-assignee">Michael</span>
+                        </label>
+                        <label class="task-item">
+                            <input type="checkbox">
+                            <span class="task-text">Afternoon walk</span>
+                            <span class="task-assignee">Michael</span>
+                        </label>
+                        <label class="task-item">
+                            <input type="checkbox">
+                            <span class="task-text">Dr. Chen appointment prep</span>
+                            <span class="task-assignee">Sarah</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="care-notes">
+                    <h4>📝 Care Notes</h4>
+                    <div class="note-input">
+                        <textarea placeholder="Add a note for the care team..."></textarea>
+                        <button onclick="addCareNote()">Post</button>
+                    </div>
+                    <div class="notes-list">
+                        <div class="note-item">
+                            <div class="note-header">
+                                <span class="note-author">Sarah</span>
+                                <span class="note-time">2 hours ago</span>
+                            </div>
+                            <p>Mom seemed a bit confused this morning about where she was. Spent some time looking at photo albums together which helped calm her.</p>
+                        </div>
+                        <div class="note-item">
+                            <div class="note-header">
+                                <span class="note-author">Michael</span>
+                                <span class="note-time">Yesterday</span>
+                            </div>
+                            <p>Good day overall! She remembered Emma's name today and was very happy about it.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <button class="btn-primary" style="width: 100%;" onclick="inviteFamilyMember()">
+                    ➕ Invite Family Member
+                </button>
+            </div>
+        </section>
+
+        <!-- Community Section (with Events) -->
+        <section id="community" class="section">
+            <h2 class="section-title">
+                <span>🤝</span> Community & Events
+            </h2>
+
+            <!-- Tab Switcher -->
+            <div class="inner-tabs">
+                <button class="inner-tab active" onclick="switchInnerTab(this, 'community-content')">🤝 Community</button>
+                <button class="inner-tab" onclick="switchInnerTab(this, 'events-content')">📅 Local Events</button>
+            </div>
+
+            <!-- Community Content -->
+            <div id="community-content" class="inner-content active">
+                <div class="community-header">
+                    <p>Connect with other caregivers, share experiences, and find support in our caring community.</p>
+                </div>
+
+                <div class="community-stats">
+                    <div class="comm-stat">
+                        <span class="stat-num">12.4K</span>
+                        <span class="stat-label">Caregivers</span>
+                    </div>
+                    <div class="comm-stat">
+                        <span class="stat-num">458</span>
+                        <span class="stat-label">Online Now</span>
+                    </div>
+                    <div class="comm-stat">
+                        <span class="stat-num">89</span>
+                        <span class="stat-label">Groups</span>
+                    </div>
+                </div>
+
+                <div class="community-groups">
+                    <h4>💬 Discussion Groups</h4>
+                    <div class="group-list">
+                        <div class="group-card" onclick="joinGroup('early-stage')">
+                            <div class="group-icon" style="background: var(--accent-teal);">🌱</div>
+                            <div class="group-info">
+                                <h5>Early Stage Caregivers</h5>
+                                <p>2,341 members • 45 online</p>
+                            </div>
+                            <button class="join-btn">Join</button>
+                        </div>
+                        <div class="group-card" onclick="joinGroup('self-care')">
+                            <div class="group-icon" style="background: var(--accent-coral);">💜</div>
+                            <div class="group-info">
+                                <h5>Caregiver Self-Care</h5>
+                                <p>1,892 members • 32 online</p>
+                            </div>
+                            <button class="join-btn">Join</button>
+                        </div>
+                        <div class="group-card" onclick="joinGroup('spouse')">
+                            <div class="group-icon" style="background: var(--purple-bright);">💑</div>
+                            <div class="group-info">
+                                <h5>Spouse Caregivers</h5>
+                                <p>1,567 members • 28 online</p>
+                            </div>
+                            <button class="join-btn">Join</button>
+                        </div>
+                        <div class="group-card" onclick="joinGroup('tips')">
+                            <div class="group-icon" style="background: var(--accent-gold);">💡</div>
+                            <div class="group-info">
+                                <h5>Tips & Tricks</h5>
+                                <p>3,456 members • 67 online</p>
+                            </div>
+                            <button class="join-btn">Join</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="community-feed">
+                    <h4>📢 Recent Posts</h4>
+                    <div class="feed-posts">
+                        <div class="feed-post">
+                            <div class="post-header">
+                                <div class="post-avatar" style="background: var(--accent-mint);">JM</div>
+                                <div class="post-author">
+                                    <h5>Jennifer M.</h5>
+                                    <span>3 hours ago • Early Stage Caregivers</span>
+                                </div>
+                            </div>
+                            <p class="post-content">Finally had a breakthrough today! My mom recognized a song from her wedding and started humming along. These small moments mean everything. 💕</p>
+                            <div class="post-actions">
+                                <button onclick="likePost(this)">❤️ 47</button>
+                                <button onclick="commentPost()">💬 12</button>
+                                <button onclick="sharePost()">↗️ Share</button>
+                            </div>
+                        </div>
+
+                        <div class="feed-post">
+                            <div class="post-header">
+                                <div class="post-avatar" style="background: var(--accent-teal);">RK</div>
+                                <div class="post-author">
+                                    <h5>Robert K.</h5>
+                                    <span>5 hours ago • Tips & Tricks</span>
+                                </div>
+                            </div>
+                            <p class="post-content">Pro tip: I started labeling drawers and cabinets with pictures instead of words. It's helped my dad find things independently and reduced his frustration significantly!</p>
+                            <div class="post-actions">
+                                <button onclick="likePost(this)">❤️ 89</button>
+                                <button onclick="commentPost()">💬 24</button>
+                                <button onclick="sharePost()">↗️ Share</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="find-friends">
+                    <h4>👋 Caregivers Near You</h4>
+                    <div class="nearby-caregivers">
+                        <div class="caregiver-card">
+                            <div class="cg-avatar" style="background: var(--accent-coral);">LS</div>
+                            <div class="cg-info">
+                                <h5>Lisa S.</h5>
+                                <p>Tucson, AZ • 2.3 miles</p>
+                            </div>
+                            <button class="connect-btn" onclick="connectCaregiver('Lisa')">Connect</button>
+                        </div>
+                        <div class="caregiver-card">
+                            <div class="cg-avatar" style="background: var(--accent-teal);">DW</div>
+                            <div class="cg-info">
+                                <h5>David W.</h5>
+                                <p>Tucson, AZ • 4.1 miles</p>
+                            </div>
+                            <button class="connect-btn" onclick="connectCaregiver('David')">Connect</button>
+                        </div>
+                    </div>
+                </div>
+
+                <button class="btn-primary" style="width: 100%;" onclick="createPost()">
+                    ✏️ Create Post
+                </button>
+            </div>
+
+            <!-- Events Content -->
+            <div id="events-content" class="inner-content">
+                <div class="events-filter">
+                    <button class="filter-btn active">All</button>
+                    <button class="filter-btn">Walks</button>
+                    <button class="filter-btn">Support</button>
+                    <button class="filter-btn">Education</button>
+                </div>
+
+                <div class="featured-event">
+                    <div class="event-badge">Featured</div>
+                    <div class="event-image walk">
+                        <span>🚶‍♂️</span>
+                    </div>
+                    <div class="event-details">
+                        <span class="event-date">Oct 18, 2025</span>
+                        <h4>Walk to End Alzheimer's - Tucson</h4>
+                        <p>Join thousands of participants in the world's largest fundraiser for Alzheimer's care, support and research.</p>
+                        <div class="event-meta">
+                            <span>📍 Reid Park</span>
+                            <span>⏰ 8:00 AM</span>
+                        </div>
+                        <button class="btn-primary" onclick="registerEvent('walk')">Register Now</button>
+                    </div>
+                </div>
+
+                <div class="upcoming-events">
+                    <h4>Upcoming Events</h4>
+                    <div class="event-list">
+                        <div class="event-item" onclick="viewEvent('support-group')">
+                            <div class="event-date-box">
+                                <span class="month">DEC</span>
+                                <span class="day">12</span>
+                            </div>
+                            <div class="event-info">
+                                <h5>Caregiver Support Group</h5>
+                                <p>Monthly meeting for family caregivers</p>
+                                <span class="event-location">📍 Pima Council on Aging</span>
+                            </div>
+                        </div>
+
+                        <div class="event-item" onclick="viewEvent('education')">
+                            <div class="event-date-box">
+                                <span class="month">DEC</span>
+                                <span class="day">15</span>
+                            </div>
+                            <div class="event-info">
+                                <h5>Understanding Dementia Workshop</h5>
+                                <p>Free educational workshop by Alz Association</p>
+                                <span class="event-location">📍 Virtual Event</span>
+                            </div>
+                        </div>
+
+                        <div class="event-item" onclick="viewEvent('memory-cafe')">
+                            <div class="event-date-box">
+                                <span class="month">DEC</span>
+                                <span class="day">20</span>
+                            </div>
+                            <div class="event-info">
+                                <h5>Memory Café</h5>
+                                <p>Social gathering for people with dementia & caregivers</p>
+                                <span class="event-location">📍 Desert Hope Café</span>
+                            </div>
+                        </div>
+
+                        <div class="event-item" onclick="viewEvent('art-therapy')">
+                            <div class="event-date-box">
+                                <span class="month">JAN</span>
+                                <span class="day">8</span>
+                            </div>
+                            <div class="event-info">
+                                <h5>Art Therapy Session</h5>
+                                <p>Creative expression for dementia patients</p>
+                                <span class="event-location">📍 Tucson Museum of Art</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="alz-events-link">
+                    <a href="https://www.alz.org/events" target="_blank" class="external-link">
+                        <span>🔗</span>
+                        Find More Events at alz.org/events
+                    </a>
+                </div>
+            </div>
+        </section>
+
         <section id="cognitive" class="section">
             <h2 class="section-title">
                 <span>🧩</span> Digital Cognitive Assessment
@@ -2515,7 +4614,7 @@
         <!-- Learning Section -->
         <section id="learning" class="section">
             <h2 class="section-title">
-                <span>📚</span> Caregiver Learning Hub
+                <span>📚</span> Learning Hub
             </h2>
 
             <!-- Alzheimer's Association Official Training Banner -->
@@ -2533,6 +4632,48 @@
                         <p>Official Training Programs • training.alz.org</p>
                     </div>
                     <span class="alz-banner-arrow">→</span>
+                </div>
+            </div>
+
+            <!-- VR Training Section -->
+            <div class="training-section">
+                <h4 class="training-section-title">
+                    <span>🥽</span> VR Dementia Training
+                    <span class="badge-new">NEW</span>
+                </h4>
+
+                <div class="vr-program-card" onclick="window.open('https://www.meta.com/experiences/dementia-reality/24335839399395972/', '_blank')">
+                    <div class="vr-program-badge">Meta Quest</div>
+                    <div class="vr-program-content">
+                        <h4>Dementia Reality™</h4>
+                        <p>Immersive VR caregiver training to build empathy through first-person dementia experiences.</p>
+                        <div class="vr-features">
+                            <span>✓ First-person perspective</span>
+                            <span>✓ 1-hour modules</span>
+                            <span>✓ Worksheets included</span>
+                        </div>
+                        <div class="vr-platforms">
+                            <span>Meta Quest 2, Quest 3, Quest Pro</span>
+                        </div>
+                    </div>
+                    <span class="vr-arrow">→</span>
+                </div>
+
+                <div class="vr-list">
+                    <div class="vr-item" onclick="window.open('https://alzfdn.org/afas-dementia-experience/', '_blank')">
+                        <div class="vr-item-icon">🔷</div>
+                        <div class="vr-item-info">
+                            <h5>AFA's Dementia Experience</h5>
+                            <p>Step into "Harry's" world • Alzheimer's Foundation</p>
+                        </div>
+                        <span>→</span>
+                    </div>
+                </div>
+
+                <div class="vr-benefits-mini">
+                    <span>💜 Build Empathy</span>
+                    <span>🎯 Improve Care</span>
+                    <span>🧠 75% Better Retention</span>
                 </div>
             </div>
 
@@ -2914,13 +5055,17 @@
                 <span class="nav-item-icon">🏠</span>
                 <span class="nav-item-label">Home</span>
             </a>
-            <a class="nav-item" onclick="switchBottomNav(this, 'cognitive')">
-                <span class="nav-item-icon">🧩</span>
-                <span class="nav-item-label">Tests</span>
+            <a class="nav-item" onclick="switchBottomNav(this, 'medication')">
+                <span class="nav-item-icon">💊</span>
+                <span class="nav-item-label">Meds</span>
             </a>
             <a class="nav-item" onclick="switchBottomNav(this, 'emergency')">
                 <span class="nav-item-icon">🚨</span>
                 <span class="nav-item-label">SOS</span>
+            </a>
+            <a class="nav-item" onclick="switchBottomNav(this, 'memory')">
+                <span class="nav-item-icon">👨‍👩‍👧</span>
+                <span class="nav-item-label">Family</span>
             </a>
             <a class="nav-item" onclick="switchBottomNav(this, 'learning')">
                 <span class="nav-item-icon">📚</span>
@@ -2969,6 +5114,16 @@
             
             document.getElementById(sectionId).classList.add('active');
             event.target.classList.add('active');
+        }
+
+        // Inner tab switching (for merged sections)
+        function switchInnerTab(tab, contentId) {
+            const parent = tab.closest('.section');
+            parent.querySelectorAll('.inner-tab').forEach(t => t.classList.remove('active'));
+            parent.querySelectorAll('.inner-content').forEach(c => c.classList.remove('active'));
+            
+            tab.classList.add('active');
+            document.getElementById(contentId).classList.add('active');
         }
 
         function switchBottomNav(elem, sectionId) {
@@ -3530,6 +5685,101 @@
             if (e.target === this) {
                 closeModal();
             }
+        });
+
+        // Vital Signs Functions
+        function syncVitals() {
+            showToast('🔄 Syncing with wearable device...', 'success');
+            // Simulate vital updates
+            setTimeout(() => {
+                document.getElementById('heartRate').textContent = Math.floor(68 + Math.random() * 10);
+                showToast('✅ Vitals synced successfully!', 'success');
+            }, 2000);
+        }
+
+        // Medication Functions
+        function markMedTaken(element) {
+            const icon = element.querySelector('.med-icon');
+            const btn = element.querySelector('.med-take-btn');
+            icon.className = 'med-icon taken';
+            icon.textContent = '✓';
+            if (btn) btn.remove();
+            showToast('💊 Medication marked as taken', 'success');
+        }
+
+        function addMedication() {
+            showToast('➕ Add medication form opened', 'success');
+        }
+
+        // Memory Album Functions
+        function openAlbum(albumName) {
+            showToast(`📸 Opening ${albumName} album...`, 'success');
+        }
+
+        function showPerson(name) {
+            showToast(`👤 Showing ${name}'s profile and photos`, 'success');
+        }
+
+        function addMemory() {
+            showToast('📷 Add new memory - Upload photo', 'success');
+        }
+
+        // Coordination Functions
+        function addCareNote() {
+            const textarea = document.querySelector('.note-input textarea');
+            if (textarea.value.trim()) {
+                showToast('📝 Note posted to care team', 'success');
+                textarea.value = '';
+            }
+        }
+
+        function inviteFamilyMember() {
+            showToast('📧 Sending invitation...', 'success');
+        }
+
+        // Community Functions
+        function joinGroup(groupId) {
+            showToast('✅ Joined group successfully!', 'success');
+        }
+
+        function likePost(btn) {
+            const text = btn.textContent;
+            const count = parseInt(text.split(' ')[1]) + 1;
+            btn.textContent = `❤️ ${count}`;
+            btn.style.color = 'var(--accent-coral)';
+        }
+
+        function commentPost() {
+            showToast('💬 Opening comments...', 'success');
+        }
+
+        function sharePost() {
+            showToast('↗️ Post shared!', 'success');
+        }
+
+        function connectCaregiver(name) {
+            showToast(`👋 Connection request sent to ${name}`, 'success');
+        }
+
+        function createPost() {
+            showToast('✏️ Create new post...', 'success');
+        }
+
+        // Events Functions
+        function registerEvent(eventType) {
+            showToast('🎫 Registering for event...', 'success');
+        }
+
+        function viewEvent(eventId) {
+            showToast('📅 Opening event details...', 'success');
+        }
+
+        // Filter buttons
+        document.querySelectorAll('.filter-btn').forEach(btn => {
+            btn.onclick = function() {
+                document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
+            };
         });
     </script>
 </body>
