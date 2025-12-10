@@ -111,7 +111,7 @@ Four interactive, research-informed cognitive tests:
 
 1. **Clone the repository**
    ```bash
-   git clone [https://github.com/imranmithu/alz-care.git](https://imranmithu.github.io/Alzheimer-s-Care-App/)
+   git clone https://github.com/imranmithu/Alzheimer-s-Care-App.git
    cd alz-care
    ```
 
@@ -157,6 +157,7 @@ To install as a PWA on mobile devices:
 ### Demo Mode
 The current version runs in demo mode with sample patient data (Eleanor Mitchell). All features are fully interactive for testing and demonstration purposes.
 
+Demo Link: https://imranmithu.github.io/Alzheimer-s-Care-App/
 ---
 
 ## 🛠 Technology Stack
