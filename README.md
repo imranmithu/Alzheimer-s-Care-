@@ -111,13 +111,14 @@ Four interactive, research-informed cognitive tests:
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/imranmithu15/alz-care.git
+   git clone [https://github.com/imranmithu/alz-care.git](https://imranmithu.github.io/Alzheimer-s-Care-App/)
    cd alz-care
    ```
 
 2. **Open in browser**
    ```bash
    # Simply open the HTML file
+   
    open alz-care-app.html
    
    # Or use a local server
