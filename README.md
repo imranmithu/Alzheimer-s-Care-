@@ -111,7 +111,7 @@ Four interactive, research-informed cognitive tests:
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/yourusername/alz-care.git
+   git clone https://github.com/imranmithu15/alz-care.git
    cd alz-care
    ```
 
@@ -302,8 +302,8 @@ copies or substantial portions of the Software.
 ### 📞 Support
 
 For questions, suggestions, or support:
-- Open an [Issue](https://github.com/yourusername/alz-care/issues)
-- Start a [Discussion](https://github.com/yourusername/alz-care/discussions)
+- Open an [Issue](https://github.com/imranmithu15/alz-care/issues)
+- Start a [Discussion](https://github.com/imranmithu15/alz-care/discussions)
 - Email: support@alz-care.app
 
 ### 🌐 Connect
